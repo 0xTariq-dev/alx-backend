@@ -9,7 +9,7 @@ The aim fo this project is to demonstrate how to implement i18n and l10n in a we
 - Localization (l10n)
 
 ---
-## language and libraries :wrench:
+## language and libraries :globe_with_meridians: :hammer_and_wrench:
 > language
 - Python 3.7 or higher
 > Libraries
