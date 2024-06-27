@@ -109,6 +109,17 @@ Then you can run the following command to install the project dependencies:
         100
         ```
 
++ [x] [Node Redis client and advanced operations](./4-redis_advanced_op.js)
+    + The file `4-redis_advanced_op.js` is a script that connects to the Redis server running on your machine and performs advanced operations with the `redis` client.
+    + The script creates a hash key `HolbertonSchools` with the following values and print the reply for each operation:
+        + `Portland`=5
+        + `Seattle`=8
+        + `New York`=2
+        + `Bogota`=2
+        + `Cali`=4
+        + `Paris`=2
+    + The script should display the object stored in Redis Using `hgetall`.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
