@@ -153,6 +153,13 @@ Then you can run the following command to install the project dependencies:
         [nodemon] clean exit - waiting for changes before restart
         ```
 
++ [x] [Create the Job creator](./6-job_creator.js)
+    + The file `6-job_creator.js` is a script that creates a queue with `Kue` and adds a job to the queue.
+    + The script should create a queue with the name `push_notification_code_school` and add a job to the queue with the data `phoneNumber` and `message`.
+    + The script should log the message `Notification job created: JOB ID` when the job is created.
+    + The script should log the message `Notification job completed` when the job is completed.
+    + The script should log the message `Notification job failed` when the job fails.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
