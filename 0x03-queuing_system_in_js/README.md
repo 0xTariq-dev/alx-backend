@@ -73,7 +73,27 @@ Then you can run the following command to install the project dependencies:
         ```bash
         $ npm run dev 0-redis_client.js
         ```
-    
+
++ [x] [Node Redis client and basic operations](./1-redis_op.js)
+    + The file `1-redis_op.js` is a script that connects to the Redis server running on your machine and performs basic operations with the `redis` client.
+    + The script adds two new functions to the `Redis` client:
+        + `setNewSchool` that accepts two arguments `schoolName` and `value` and sets the value of the key `schoolName` to `value`.
+        + `displaySchoolValue` that accepts one argument `schoolName` and returns the value of the key `schoolName`.
+        + The script should display the value of the key `Holberton` using the function `displaySchoolValue('Holberton');`.
+        + The script should set the value of the key `HolbertonSanFrancisco` to `100` using the function `setNewSchool('HolbertonSanFrancisco', '100');`.
+        + The script should display the value of the key `HolbertonSanFrancisco` using the function `displaySchoolValue('HolbertonSanFrancisco');`.
+    + run the `1-redis_op.js` script
+        ```bash
+        $ npm run dev 1-redis_op.js
+        ```
+        > Expected output:
+        ```
+        Redis client connected to the server
+        School
+        Reply: OK
+        100
+        ```
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
