@@ -8,7 +8,7 @@ The project uses `redis` as the backend to store the tasks in the queue.
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Installation :hammer_and_wrench:
-> Note: You need to have redis installed on your machine to run the project.
+> Note: You need to have redis installed to run the project.
 You can install redis on bash by following the instructions on the first task in the [Tasks](#tasks-white_check_mark) section below.
 Or you can go to the [redis website](https://redis.io/download) to download and install redis on your specific OS.
 
@@ -59,7 +59,7 @@ Then you can run the following command to install the project dependencies:
 
 + [x] [Node Redis Client](./0-redis_client.js)
     + The file `0-redis_client.js` is a script that connects to the Redis server running on your machine.
-    + The script connects to the Redis server running on your machine and returns the message `Redis client connected to the server` when the connection is successful.
+    + The script connects to the Redis server running and returns the message `Redis client connected to the server` when the connection is successful.
     + If the connection is not successful, the script should return the error message `Redis client not connected to the server: error message`.
     + Install the `redis` client for `Node.js`
         ```bash
@@ -75,7 +75,7 @@ Then you can run the following command to install the project dependencies:
         ```
 
 + [x] [Node Redis client and basic operations](./1-redis_op.js)
-    + The file `1-redis_op.js` is a script that connects to the Redis server running on your machine and performs basic operations with the `redis` client.
+    + The file `1-redis_op.js` is a script that connects to the Redis server running and performs basic operations with the `redis` client.
     + The script adds two new functions to the `Redis` client:
         + `setNewSchool` that accepts two arguments `schoolName` and `value` and sets the value of the key `schoolName` to `value`.
         + `displaySchoolValue` that accepts one argument `schoolName` and returns the value of the key `schoolName`.
@@ -95,7 +95,7 @@ Then you can run the following command to install the project dependencies:
         ```
 
 + [x] [Node Redis client and async operations](./2-redis_op.js)
-    + The file `2-redis_op.js` is a script that connects to the Redis server running on your machine and performs async operations with the `redis` client.
+    + The file `2-redis_op.js` is a script that connects to the Redis server running and performs async operations with the `redis` client.
     + Using `promisify`, modify the function `displaySchoolValue` to use ES6 async / await else the same logic as in the previous task.
     + run the `2-redis_op.js` script
         ```bash
@@ -110,7 +110,7 @@ Then you can run the following command to install the project dependencies:
         ```
 
 + [x] [Node Redis client and advanced operations](./4-redis_advanced_op.js)
-    + The file `4-redis_advanced_op.js` is a script that connects to the Redis server running on your machine and performs advanced operations with the `redis` client.
+    + The file `4-redis_advanced_op.js` is a script that connects to the Redis server running and performs advanced operations with the `redis` client.
     + The script creates a hash key `HolbertonSchools` with the following values and print the reply for each operation:
         + `Portland`=5
         + `Seattle`=8
@@ -119,6 +119,39 @@ Then you can run the following command to install the project dependencies:
         + `Cali`=4
         + `Paris`=2
     + The script should display the object stored in Redis Using `hgetall`.
+
++ [x] Node Redis client [publisher](./5-publisher.js) and [subscriber](./5-subscriber.js)
+    + The file `5-publisher.js` is a script that connects to the Redis server running and publishes a message to the channel `holberton school channel`.
+        + On connect, it should log the message Redis client connected to the server.
+        + On error, it should log the message `Redis client not connected to the server: ERROR MESSAGE`.
+        + The script contains a function `publishMessage` that accepts two arguments `message` and `time` and publishes the message `About to send MESSAGE` to the channel `holberton school channel` after `time` milliseconds.
+            ```JavaScript
+            publishMessage("Holberton Student #1 starts course", 100);
+            publishMessage("Holberton Student #2 starts course", 200);
+            publishMessage("KILL_SERVER", 300);
+            publishMessage("Holberton Student #3 starts course", 400);
+            ```
+            ```bash
+            $ npm run dev 5-publisher.js
+            Redis client connected to the server
+            About to send Holberton Student #1 starts course
+            About to send Holberton Student #2 starts course
+            About to send KILL_SERVER
+            About to send Holberton Student #3 starts course
+            ```
+    + The file `5-subscriber.js` is a script that connects to the Redis server running and subscribes to the channel `holberton school channel`.
+        + On connect, it should log the message Redis client connected to the server.
+        + On error, it should log the message `Redis client not connected to the server: ERROR MESSAGE`.
+        + On message, it should log the message to the console.
+        + When the message is `KILL_SERVER`, the script should unsubscribe and quit.
+        ```bash
+        $ npm run dev 5-subscriber.js
+        Redis client connected to the server
+        Holberton Student #1 starts course
+        Holberton Student #2 starts course
+        KILL_SERVER
+        [nodemon] clean exit - waiting for changes before restart
+        ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
