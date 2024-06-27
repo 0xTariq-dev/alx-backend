@@ -9,13 +9,11 @@ The project uses `redis` as the backend to store the tasks in the queue.
 
 ## Installation :hammer_and_wrench:
 > Note: You need to have redis installed on your machine to run the project.
-You can install redis on bash by following the instructions on the first task in the [Tasks](#tasks-) section below.
+You can install redis on bash by following the instructions on the first task in the [Tasks](#tasks-white_check_mark) section below.
 Or you can go to the [redis website](https://redis.io/download) to download and install redis on your specific OS.
 
 Then you can run the following command to install the project dependencies:
-    ```bash
-    $ npm install
-    ```
+    ```npm install```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -59,6 +57,23 @@ Then you can run the following command to install the project dependencies:
           $ kill -9 $(pgrep redis-server)
           ```
 
++ [x] [Node Redis Client](./0-redis_client.js)
+    + The file `0-redis_client.js` is a script that connects to the Redis server running on your machine.
+    + The script connects to the Redis server running on your machine and returns the message `Redis client connected to the server` when the connection is successful.
+    + If the connection is not successful, the script should return the error message `Redis client not connected to the server: error message`.
+    + Install the `redis` client for `Node.js`
+        ```bash
+        $ npm install redis
+        ```
+    + run the `redis` server in the background
+        ```bash
+        $ ./src/redis-server > /dev/null 2>&1 &
+        ```
+    + run the `0-redis_client.js` script
+        ```bash
+        $ npm run dev 0-redis_client.js
+        ```
+    
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
