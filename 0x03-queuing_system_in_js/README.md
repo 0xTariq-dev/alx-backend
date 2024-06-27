@@ -94,6 +94,21 @@ Then you can run the following command to install the project dependencies:
         100
         ```
 
++ [x] [Node Redis client and async operations](./2-redis_op.js)
+    + The file `2-redis_op.js` is a script that connects to the Redis server running on your machine and performs async operations with the `redis` client.
+    + Using `promisify`, modify the function `displaySchoolValue` to use ES6 async / await else the same logic as in the previous task.
+    + run the `2-redis_op.js` script
+        ```bash
+        $ npm run dev 2-redis_op.js
+        ```
+        > Expected output:
+        ```
+        Redis client connected to the server
+        School
+        Reply: OK
+        100
+        ```
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
