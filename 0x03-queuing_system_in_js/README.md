@@ -160,6 +160,29 @@ Then you can run the following command to install the project dependencies:
     + The script should log the message `Notification job completed` when the job is completed.
     + The script should log the message `Notification job failed` when the job fails.
 
++ [x] [Create the Job processor](./6-job_processor.js)
+    + The file `6-job_processor.js` is a script that processes the jobs in the queue `push_notification_code_school`.
+    + The script should log the message `Sending notification to PHONE_NUMBER, with message: MESSAGE` when the job is processed.
+    > Note: The script should be run in a separate terminal from the job creator script.
+    ### terminal 1 (job processor)
+        ```bash
+        $ npm run dev 6-job_processor.js
+        Sending notification to 4153518780, with message: This is the code to verify your account
+        ```
+    ### terminal 2 (job creator)
+        ```bash
+        $ npm run dev 6-job_creator.js
+        Notification job created: 2
+        ```
+    ### terminal 1 (job processor)
+        ```bash
+        Sending notification to 4153518780, with message: This is the code to verify your account
+        ```
+    ### terminal 2 (job creator)
+        ```bash
+        Notification job completed
+        ```
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
@@ -167,3 +190,5 @@ Then you can run the following command to install the project dependencies:
 + [Redis client interface](https://redis.io/docs/latest/develop/connect/cli/)
 + [Redis client for Node.js](https://github.com/redis/node-redis)
 + [Kue - Redis Queue for Node.js](https://github.com/Automattic/kue)
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
