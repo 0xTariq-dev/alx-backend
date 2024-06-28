@@ -183,6 +183,26 @@ Then you can run the following command to install the project dependencies:
         Notification job completed
         ```
 
++ [x] [Track progress and errors with Kue: Create the Job creator](./7-job_creator.js)
+    + The file `7-job_creator.js` is a script that creates a queue with `Kue` and adds a job to the queue.
+    + The script should create a queue with the name `push_notification_code_school_2` and add a job to the queue with the data `phoneNumber` and `message`.
+    + If there is no error, log to the console `Notification job created: JOB_ID`.
+    + On the job completion, log to the console `Notification job completed`.
+    + On the job failure, log to the console `Notification job failed`.
+    + On the job progress, log to the console `Notification job JOB_ID PERCENTAGE% complete`.
+
++ [x] [Track progress and errors with Kue: Create the Job processor](./7-job_processor.js)
+    + The file `7-job_processor.js` is a script that processes the jobs in the queue `push_notification_code_school_2`.
+    + The script defines a function `sendNotification` that simulates sending a notification to a phone number.
+        + The function accepts 4 arguments: `phoneNumber`, `message`, `job`, and `done`.
+        + When the function is called, track the progress of the job of `0` out of `100`.
+        + If phoneNumber is included in the “blacklisted array”, fail the job with an Error object and the message: `Phone number PHONE_NUMBER is blacklisted`.
+        + Otherwise: 
+            - update the progress of the job to `50` out of `100`.
+            - log to the console `Sending notification to PHONE_NUMBER, with message: MESSAGE`.
+    + The script then processes the jobs in the queue `push_notification_code_school_2` with two jobs at a time.
+    + The script should log the message `Notification job JOB_ID PERCENTAGE% complete` when the job is processed.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
