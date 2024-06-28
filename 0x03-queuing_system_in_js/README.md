@@ -214,7 +214,14 @@ Then you can run the following command to install the project dependencies:
             - When a job is complete, log to the console `Notification job JOB_ID completed`.
             - When a job is failed, log to the console `Notification job JOB_ID failed: ERROR`.
             - When a job is making progress, log to the console `Notification job JOB_ID PERCENT% complete`.
-        
+
++ [x] [Writing the test for job creation](./8-job.test.js)
+    + Contains a test suite for the function `createPushNotificationsJobs` in the file `8-job.js`.
+    + The test suite should test the following scenarios:
+        + When `jobs` is not an array, it should throw an Error with message: `Jobs is not an array`.
+        + Test the console output when a job is created.
+        + Test the data of the job created.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
