@@ -203,6 +203,18 @@ Then you can run the following command to install the project dependencies:
     + The script then processes the jobs in the queue `push_notification_code_school_2` with two jobs at a time.
     + The script should log the message `Notification job JOB_ID PERCENTAGE% complete` when the job is processed.
 
++ [x] [Writing the job creation function](./8-job.js)
+    + Contains a function `createPushNotificationsJobs`:
+        + It takes into argument `jobs` (array of objects), and `queue` (Kue queue).
+        + If `jobs` is not an array, it should throw an Error with message: `Jobs is not an array`.
+        + The function should create a job with the data `job` and the queue `queue`.
+        + For each job in jobs:
+            - create a job in the queue `push_notification_code_3`.
+            - When a job is created, log to the console `Notification job created: JOB_ID`.
+            - When a job is complete, log to the console `Notification job JOB_ID completed`.
+            - When a job is failed, log to the console `Notification job JOB_ID failed: ERROR`.
+            - When a job is making progress, log to the console `Notification job JOB_ID PERCENT% complete`.
+        
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
