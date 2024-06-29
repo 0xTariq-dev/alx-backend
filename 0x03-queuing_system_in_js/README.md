@@ -229,6 +229,13 @@ Then you can run the following command to install the project dependencies:
         + `/list_products/:itemId` that returns the item with the `itemId` if it is in found in stock.
         + `/reserve_product/:itemId` that reserves the item with the `itemId` if it is in stock.
 
++ [x] [Can I have a seat?](./100-seat.js)
+    + Contains an express server that listens on the port `1245`.
+    + The server has the following routes:
+        + `/available_seats` that returns the number of available seats.
+        + `/reserve_seat` that reserves a seat if it is available.
+        + `/process` that returns the number of seats already reserved.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
