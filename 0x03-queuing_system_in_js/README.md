@@ -222,6 +222,13 @@ Then you can run the following command to install the project dependencies:
         + Test the console output when a job is created.
         + Test the data of the job created.
 
++ [x] [In stock?](./9-stock.js)
+    + Contains an express server that listens on the port `1245`.
+    + The server has the following routes:
+        + `/list_products` that returns the list of products in stock.
+        + `/list_products/:itemId` that returns the item with the `itemId` if it is in found in stock.
+        + `/reserve_product/:itemId` that reserves the item with the `itemId` if it is in stock.
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Resources :books:
